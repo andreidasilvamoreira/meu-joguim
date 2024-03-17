@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<?php
+require_once 'Unidade.php';
+require_once 'Simulador.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>simulador</title>
-</head>
+$exercito1 = criar_exercito(
+    [
+        "Cavalaria" => 1,
+        "Piqueiro" => 1,
+        "Arqueiro" => 1
+    ]
+);
 
-<body>
-    <?php
-    require_once 'unidades.php';
-    require_once 'simulador.php';
+$exercito2 = criar_exercito(
+    [
+        "Cavalaria" => 1,
+        "Piqueiro" => 1,
+        "Arqueiro" => 1
+    ]
+);
 
-    $exercito1 = criar_exercito(["Cavalaria" => 10, "Piqueiro" => 0, "Arqueiro" => 0]);
-    $exercito2 = criar_exercito(["Cavalaria" => 0, "Piqueiro" => 0, "Arqueiro" => 0]);
-
-    batalhar($exercito1, $exercito2);
-
-    if (empate($exercito1, $exercito2)) {
-        echo "A batalha terminou em empate!";
-    }
-    ?>
-</body>
-
-</html>
+batalhar($exercito1, $exercito2);
