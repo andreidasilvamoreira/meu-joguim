@@ -2,7 +2,8 @@
 require_once 'Unidade.php';
 require_once 'Simulador.php';
 
-$exercito1 = criar_exercito(
+$simulador = new Simulador();
+$exercito1 = $simulador->criar_exercito(
     [
         "Cavalaria" => 1,
         "Piqueiro" => 1,
@@ -10,7 +11,7 @@ $exercito1 = criar_exercito(
     ]
 );
 
-$exercito2 = criar_exercito(
+$exercito2 = $simulador->criar_exercito(
     [
         "Cavalaria" => 1,
         "Piqueiro" => 1,
@@ -18,4 +19,4 @@ $exercito2 = criar_exercito(
     ]
 );
 
-batalhar($exercito1, $exercito2);
+$simulador->batalhar($exercito1, $exercito2);
